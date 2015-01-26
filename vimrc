@@ -99,7 +99,10 @@ set smartindent
 " }}}
 
 " Line wrapping {{{
-set textwidth=79
+" setlocal formatoptions=ant
+" setlocal textwidth=80
+" setlocal wrapmargin=0
+" set textwidth=79
 set wrap
 set linebreak
 set nolist
@@ -183,6 +186,12 @@ nnoremap <leader>r :setl rnu!<CR>
 
 " close other buffers and windows
 nnoremap <leader>o :BufOnly<CR><C-w>o<CR>
+
+" close current buffer
+nnoremap <leader>d :bdelete<CR>
+
+" write current buffer
+nnoremap <leader>w :write<CR>
 " }}}
 
 " GUI options {{{
