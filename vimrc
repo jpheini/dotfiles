@@ -78,15 +78,17 @@ let g:syntastic_mode_map={ 'mode': 'active',
 Plugin 'jelera/vim-javascript-syntax'
 autocmd FileType javascript call JavaScriptFold()
 
-Plugin 'JavaScript-Indent'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'groenewege/vim-less'
+
+Plugin 'tpope/vim-vinegar'
 " }}}
 
 " Colors {{{
 set background=dark
 colorscheme solarized
+highlight clear SignColumn
 " }}}
 
 " Indentation settings {{{
