@@ -22,6 +22,7 @@ set showmode
 set clipboard=unnamed
 set showmatch " show matching parentheses
 set nofoldenable " unfolded by default
+set mouse=a
 
 let mapleader = "\<Space>"
 
@@ -83,6 +84,21 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'groenewege/vim-less'
 
 Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+
+Plugin 'danro/rename.vim'
+
+Plugin 'derekwyatt/vim-scala'
+
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
+" Evaluate Clojure buffers on load
+autocmd BufRead *.clj try | silent! Require | catch /^Fireplace/ | endtry
+Plugin 'tpope/vim-fireplace'
+au Filetype clojure nmap <c-c><c-k> :Require<cr>
+Plugin 'vim-scripts/paredit.vim'
+Plugin 'venantius/vim-cljfmt'
 " }}}
 
 " Colors {{{
@@ -134,7 +150,7 @@ set wildmode=list:longest,full
 " }}}
 
 " Backup and viminfo {{{
-set viminfo='10,\"100,:100,n~/.vim/viminfo
+" set viminfo='10,\"100,:100,n~/.vim/viminfo
 
 set backupdir=~/.vim/vim-tmp
 set backupcopy=yes
@@ -188,6 +204,9 @@ nnoremap <leader>r :setl rnu!<CR>
 
 " close other buffers and windows
 nnoremap <leader>o :BufOnly<CR><C-w>o<CR>
+
+" switch between most recent buffers
+nnoremap <leader>t :b#<CR>
 
 " close current buffer
 nnoremap <leader>d :bdelete<CR>
@@ -254,6 +273,8 @@ if has('autocmd')
     endfunction
     autocmd Filetype vim call SetVimFiletypeOptions()
     autocmd Filetype qf call SetVimFiletypeOptions()
+
+    autocmd BufRead,BufNewFile *.scala set filetype=scala
 endif
 " }}}
 
