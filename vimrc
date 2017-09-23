@@ -37,7 +37,7 @@ Plugin 'gmarik/vundle'
 
 Plugin 'tpope/vim-sensible'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'vim-scripts/BufOnly.vim'
 
@@ -91,14 +91,19 @@ Plugin 'danro/rename.vim'
 
 Plugin 'derekwyatt/vim-scala'
 
+Plugin 'guns/vim-sexp'
 Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+Plugin 'luochen1990/rainbow'
+let g:rainbow_active = 1
 Plugin 'guns/vim-clojure-highlight'
 " Evaluate Clojure buffers on load
 autocmd BufRead *.clj try | silent! Require | catch /^Fireplace/ | endtry
 Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-salve'
 au Filetype clojure nmap <c-c><c-k> :Require<cr>
-Plugin 'vim-scripts/paredit.vim'
 Plugin 'venantius/vim-cljfmt'
+Plugin 'venantius/vim-eastwood'
 " }}}
 
 " Colors {{{
@@ -234,7 +239,7 @@ if has("gui_running")
     elseif has("gui_macvim")
         highlight visual term=reverse cterm=reverse guibg=MacSelectedTextBackgroundColor
         highlight cursor guifg=bg guibg=LightGoldenRod
-        set guifont=Source\ Code\ Pro\ for\ Powerline:h18
+        set guifont=Source\ Code\ Pro\ for\ Powerline:h14
         set transparency=10
     endif
 endif
